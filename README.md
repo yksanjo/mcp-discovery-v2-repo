@@ -15,8 +15,8 @@
   <a href="#">
     <img src="https://img.shields.io/badge/response-50ms-purple?style=flat-square" alt="Response Time">
   </a>
-  <a href="https://github.com/yksanjo/mcp-discovery">
-    <img src="https://img.shields.io/github/stars/yksanjo/mcp-discovery?style=flat-square" alt="GitHub Stars">
+  <a href="https://github.com/yksanjo/mcp-discovery-v2">
+    <img src="https://img.shields.io/github/stars/yksanjo/mcp-discovery-v2?style=flat-square" alt="GitHub Stars">
   </a>
 </p>
 
@@ -253,7 +253,7 @@ MCP Discovery aggregates from multiple sources for comprehensive coverage:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yksanjo/mcp-discovery.git
+git clone https://github.com/yksanjo/mcp-discovery-v2.git
 cd mcp-discovery
 
 # Install dependencies
