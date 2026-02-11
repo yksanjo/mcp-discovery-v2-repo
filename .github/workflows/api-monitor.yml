@@ -1,0 +1,50 @@
+name: API Monitor
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Health check
+        run: |
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://mcp-discovery-two.vercel.app/health)
+          if [ "$response" != "200" ]; then
+            echo "❌ API health check failed with status $response"
+            exit 1
+          fi
+          echo "✅ API is healthy (status $response)"
+      
+      - name: Test semantic search
+        run: |
+          response=$(curl -s -X POST https://mcp-discovery-two.vercel.app/api/v1/discover \
+            -H "Content-Type: application/json" \
+            -d '{"need": "database", "limit": 3}')
+          
+          if ! echo "$response" | grep -q "recommendations"; then
+            echo "❌ Discovery endpoint returned invalid response"
+            echo "$response"
+            exit 1
+          fi
+          
+          count=$(echo "$response" | grep -o '"recommendations":\[' | wc -l)
+          echo "✅ Discovery working (found recommendations)"
+      
+      - name: Response time check
+        run: |
+          time_ms=$(curl -s -w "%{time_total}" -o /dev/null -X POST \
+            https://mcp-discovery-two.vercel.app/api/v1/discover \
+            -H "Content-Type: application/json" \
+            -d '{"need": "test", "limit": 1}')
+          
+          time_ms_int=$(echo "$time_ms * 1000" | bc | cut -d. -f1)
+          
+          if [ "$time_ms_int" -gt 1000 ]; then
+            echo "⚠️ API response time is slow: ${time_ms_int}ms (target: <500ms)"
+          else
+            echo "✅ API response time: ${time_ms_int}ms"
+          fi
