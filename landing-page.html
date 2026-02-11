@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Discovery - Semantic Search for 14,000+ MCP Servers</title>
+    <meta name="description" content="The search API for Model Context Protocol servers. Your agents find the right tool in 50ms, not 10 minutes.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="MCP Discovery - Search API for MCP Servers">
+    <meta property="og:description" content="14,000+ MCP servers instantly searchable. Semantic search, install commands, and performance metrics.">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Gradient animation */
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        /* Code block styling */
+        .code-block {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+        }
+        
+        /* Glow effect */
+        .glow {
+            box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
+        }
+        
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
+                        <span class="font-bold text-white">M</span>
+                    </div>
+                    <span class="font-semibold text-lg">MCP Discovery</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-400 hover:text-white transition">Features</a>
+                    <a href="#demo" class="text-gray-400 hover:text-white transition">Demo</a>
+                    <a href="#docs" class="text-gray-400 hover:text-white transition">Docs</a>
+                    <a href="https://github.com/yksanjo/mcp-discovery" class="text-gray-400 hover:text-white transition">GitHub</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://mcp-discovery-two.vercel.app" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium transition">
+                        Try API
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+        <!-- Background gradient -->
+        <div class="absolute inset-0 bg-gradient-to-b from-indigo-900/20 via-gray-900 to-gray-900"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Badge -->
+            <div class="inline-flex items-center space-x-2 bg-indigo-500/10 border border-indigo-500/20 rounded-full px-4 py-1.5 mb-8">
+                <span class="flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span class="text-indigo-400 text-sm font-medium">14,000+ servers indexed</span>
+            </div>
+            
+            <!-- Headline -->
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+                <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Semantic search
+                </span>
+                <br>
+                <span class="text-white">for MCP servers</span>
+            </h1>
+            
+            <!-- Subheadline -->
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10">
+                Your agents find the right tool in <span class="text-white font-semibold">50ms</span>, not 10 minutes. 
+                14,000+ Model Context Protocol servers, instantly searchable.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                <a href="#demo" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition glow">
+                    Try Live Demo
+                </a>
+                <a href="https://github.com/yksanjo/mcp-discovery" class="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition border border-gray-700">
+                    View on GitHub
+                </a>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white">14,000+</div>
+                    <div class="text-gray-500 text-sm mt-1">Servers Indexed</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white">~50ms</div>
+                    <div class="text-gray-500 text-sm mt-1">Response Time</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white">20+</div>
+                    <div class="text-gray-500 text-sm mt-1">Categories</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white">100%</div>
+                    <div class="text-gray-500 text-sm mt-1">Free to Use</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Problem -->
+                <div>
+                    <h2 class="text-red-400 font-semibold mb-4 uppercase tracking-wide text-sm">The Problem</h2>
+                    <h3 class="text-3xl font-bold text-white mb-4">Agents can't discover tools on their own</h3>
+                    <div class="code-block p-6 font-mono text-sm">
+                        <div class="text-gray-500 mb-2"># Current workflow</div>
+                        <div class="text-gray-300">
+                            <span class="text-purple-400">Agent:</span> "I need to send Slack notifications"<br><br>
+                            <span class="text-gray-500">→ Human googles for 10 minutes</span><br>
+                            <span class="text-gray-500">→ Finds 50 different MCP servers</span><br>
+                            <span class="text-gray-500">→ Picks one arbitrarily</span><br>
+                            <span class="text-gray-500">→ Configures it manually</span><br>
+                            <span class="text-gray-500">→ Agent finally uses it</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Solution -->
+                <div>
+                    <h2 class="text-green-400 font-semibold mb-4 uppercase tracking-wide text-sm">The Solution</h2>
+                    <h3 class="text-3xl font-bold text-white mb-4">Semantic search with one-line install</h3>
+                    <div class="code-block p-6 font-mono text-sm">
+                        <div class="text-gray-500 mb-2"># With MCP Discovery</div>
+                        <div class="text-gray-300">
+                            <span class="text-purple-400">Agent:</span> "I need to send Slack notifications"<br><br>
+                            <span class="text-green-400">→ API call (50ms)</span><br>
+                            <span class="text-green-400">→ Gets ranked servers</span><br>
+                            <span class="text-green-400">→ Auto-installs top match</span><br>
+                            <span class="text-green-400">→ Done</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section id="demo" class="py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Try It Live</h2>
+                <p class="text-gray-400 text-lg">Enter what your agent needs. Get results in milliseconds.</p>
+            </div>
+            
+            <!-- Demo Interface -->
+            <div class="code-block p-6 md:p-8">
+                <!-- Input -->
+                <div class="mb-6">
+                    <label class="block text-gray-400 text-sm mb-2">What does your agent need?</label>
+                    <div class="flex gap-3">
+                        <input 
+                            type="text" 
+                            id="demo-input"
+                            placeholder="e.g., PostgreSQL database access" 
+                            class="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500"
+                        >
+                        <button 
+                            onclick="runDemo()"
+                            class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition"
+                        >
+                            Search
+                        </button>
+                    </div>
+                    <!-- Quick suggestions -->
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <button onclick="setDemo('send slack notifications')" class="text-xs bg-gray-800 hover:bg-gray-700 text-gray-400 px-3 py-1 rounded-full transition">send slack notifications</button>
+                        <button onclick="setDemo('query PostgreSQL database')" class="text-xs bg-gray-800 hover:bg-gray-700 text-gray-400 px-3 py-1 rounded-full transition">query PostgreSQL database</button>
+                        <button onclick="setDemo('scrape web pages')" class="text-xs bg-gray-800 hover:bg-gray-700 text-gray-400 px-3 py-1 rounded-full transition">scrape web pages</button>
+                        <button onclick="setDemo('search with Brave')" class="text-xs bg-gray-800 hover:bg-gray-700 text-gray-400 px-3 py-1 rounded-full transition">search with Brave</button>
+                    </div>
+                </div>
+                
+                <!-- Output -->
+                <div>
+                    <label class="block text-gray-400 text-sm mb-2">Response</label>
+                    <pre id="demo-output" class="font-mono text-sm text-gray-300 overflow-x-auto">// Click "Search" to see results...</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Examples -->
+    <section id="docs" class="py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Simple Integration</h2>
+                <p class="text-gray-400 text-lg">Add MCP Discovery to your agent in 5 lines of code.</p>
+            </div>
+            
+            <!-- Tabs -->
+            <div class="flex justify-center mb-8">
+                <div class="bg-gray-800 rounded-lg p-1 inline-flex">
+                    <button onclick="showCode('python')" id="tab-python" class="px-4 py-2 rounded-md text-sm font-medium bg-indigo-600 text-white transition">Python</button>
+                    <button onclick="showCode('javascript')" id="tab-javascript" class="px-4 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white transition">JavaScript</button>
+                    <button onclick="showCode('curl')" id="tab-curl" class="px-4 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white transition">cURL</button>
+                </div>
+            </div>
+            
+            <!-- Code blocks -->
+            <div class="max-w-3xl mx-auto">
+                <div id="code-python" class="code-block p-6">
+                    <pre class="font-mono text-sm text-gray-300"><span class="text-purple-400">import</span> requests
+
+<span class="text-blue-400">class</span> <span class="text-yellow-400">AgentWithDiscovery</span>:
+    <span class="text-blue-400">def</span> <span class="text-yellow-400">find_tool</span>(<span class="text-blue-400">self</span>, need: <span class="text-blue-400">str</span>):
+        response = requests.post(
+            <span class="text-green-400">"https://mcp-discovery-two.vercel.app/api/v1/discover"</span>,
+            json={"need": need, "limit": <span class="text-orange-400">3</span>}
+        )
+        <span class="text-blue-400">return</span> response.json()["recommendations"]
+
+<span class="text-gray-500"># Usage</span>
+agent = AgentWithDiscovery()
+tools = agent.find_tool(<span class="text-green-400">"I need a PostgreSQL database"</span>)
+<span class="text-blue-400">print</span>(tools[<span class="text-orange-400">0</span>]["install_command"])</pre>
+                </div>
+                
+                <div id="code-javascript" class="code-block p-6 hidden">
+                    <pre class="font-mono text-sm text-gray-300"><span class="text-blue-400">async function</span> <span class="text-yellow-400">discoverTool</span>(need, limit = <span class="text-orange-400">3</span>) {
+  <span class="text-blue-400">const</span> response = <span class="text-blue-400">await</span> fetch(
+    <span class="text-green-400">'https://mcp-discovery-two.vercel.app/api/v1/discover'</span>, {
+      method: <span class="text-green-400">'POST'</span>,
+      headers: { <span class="text-green-400">'Content-Type'</span>: <span class="text-green-400">'application/json'</span> },
+      body: JSON.stringify({ need, limit })
+    }
+  );
+  <span class="text-blue-400">return</span> response.json();
+}
+
+<span class="text-gray-500">// Your agent just got smarter</span>
+<span class="text-blue-400">const</span> tools = <span class="text-blue-400">await</span> discoverTool(<span class="text-green-400">"database for user preferences"</span>);
+console.log(tools.recommendations[<span class="text-orange-400">0</span>].install_command);</pre>
+                </div>
+                
+                <div id="code-curl" class="code-block p-6 hidden">
+                    <pre class="font-mono text-sm text-gray-300">curl -X POST https://mcp-discovery-two.vercel.app/api/v1/discover \
+  -H <span class="text-green-400">"Content-Type: application/json"</span> \
+  -d <span class="text-green-400">'{
+    "need": "send slack notifications",
+    "limit": 3
+  }'</span>
+
+<span class="text-gray-500"># Response:</span>
+{
+  <span class="text-green-400">"recommendations"</span>: [
+    {
+      <span class="text-green-400">"server"</span>: <span class="text-green-400">"slack-server"</span>,
+      <span class="text-green-400">"name"</span>: <span class="text-green-400">"Slack MCP Server"</span>,
+      <span class="text-green-400">"install_command"</span>: <span class="text-green-400">"npx -y @anthropic/mcp-server-slack"</span>,
+      <span class="text-green-400">"confidence"</span>: <span class="text-orange-400">0.95</span>
+    }
+  ]
+}</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why MCP Discovery?</h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    The only MCP server index built for autonomous agents.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-indigo-500/50 transition">
+                    <div class="w-12 h-12 bg-indigo-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Semantic Search</h3>
+                    <p class="text-gray-400">Natural language queries like "I need a database" return relevant servers ranked by confidence.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-indigo-500/50 transition">
+                    <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Lightning Fast</h3>
+                    <p class="text-gray-400">~50ms response time. Faster than you can blink. Agents get results instantly.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-indigo-500/50 transition">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Install Commands</h3>
+                    <p class="text-gray-400">Every server includes the exact command to install it. No more hunting through READMEs.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-indigo-500/50 transition">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Multi-Source</h3>
+                    <p class="text-gray-400">Aggregated from Glama, NPM, Awesome Lists, and the official Anthropic registry.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-indigo-500/50 transition">
+                    <div class="w-12 h-12 bg-yellow-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">20+ Categories</h3>
+                    <p class="text-gray-400">Database, AI/ML, Communication, Cloud, Security, and more. Every use case covered.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-indigo-500/50 transition">
+                    <div class="w-12 h-12 bg-pink-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">LangChain Ready</h3>
+                    <p class="text-gray-400">Drop-in integration with LangChain, AutoGPT, and any agent framework.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Sources -->
+    <section class="py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4">Comprehensive Coverage</h2>
+                <p class="text-gray-400">Aggregated from every major MCP registry.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div class="bg-gray-800 rounded-xl p-6 text-center border border-gray-700">
+                    <div class="text-3xl font-bold text-white mb-1">10,000+</div>
+                    <div class="text-gray-400 text-sm">Glama.ai</div>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-6 text-center border border-gray-700">
+                    <div class="text-3xl font-bold text-white mb-1">2,500+</div>
+                    <div class="text-gray-400 text-sm">NPM Registry</div>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-6 text-center border border-gray-700">
+                    <div class="text-3xl font-bold text-white mb-1">2,300+</div>
+                    <div class="text-gray-400 text-sm">GitHub + Awesome</div>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-6 text-center border border-gray-700">
+                    <div class="text-3xl font-bold text-white mb-1">50+</div>
+                    <div class="text-gray-400 text-sm">Official Registry</div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <div class="inline-flex items-center space-x-2 bg-green-500/10 border border-green-500/20 rounded-full px-6 py-3">
+                    <span class="text-green-400 font-semibold">14,000+ total unique servers</span>
+                    <span class="text-gray-500">|</span>
+                    <span class="text-gray-400">Deduped & indexed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to give your agents superpowers?</h2>
+            <p class="text-gray-400 text-xl mb-10">
+                Join developers building the next generation of autonomous agents.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://mcp-discovery-two.vercel.app" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition glow">
+                    Start Using the API
+                </a>
+                <a href="https://github.com/yksanjo/mcp-discovery" class="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition border border-gray-700">
+                    Star on GitHub
+                </a>
+            </div>
+            <p class="text-gray-500 mt-6">Free to use. No signup required.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
+                            <span class="font-bold text-white">M</span>
+                        </div>
+                        <span class="font-semibold text-white">MCP Discovery</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Semantic search for Model Context Protocol servers.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition">Features</a></li>
+                        <li><a href="#demo" class="text-gray-400 hover:text-white transition">Live Demo</a></li>
+                        <li><a href="#docs" class="text-gray-400 hover:text-white transition">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://github.com/yksanjo/mcp-discovery" class="text-gray-400 hover:text-white transition">GitHub</a></li>
+                        <li><a href="https://modelcontextprotocol.io/" class="text-gray-400 hover:text-white transition">MCP Protocol</a></li>
+                        <li><a href="https://mcp-discovery-two.vercel.app/api/v1/categories" class="text-gray-400 hover:text-white transition">Browse Servers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://github.com/yksanjo" class="text-gray-400 hover:text-white transition">@yksanjo</a></li>
+                        <li><a href="https://mcp-discovery-two.vercel.app" class="text-gray-400 hover:text-white transition">mcp-discovery-two.vercel.app</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+                <p>Built for the agentic web. MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Demo functionality
+        const demoData = {
+            'send slack notifications': {
+                recommendations: [
+                    {
+                        server: "slack-server",
+                        name: "Slack MCP Server",
+                        description: "Official Slack integration for MCP",
+                        install_command: "npx -y @anthropic/mcp-server-slack",
+                        confidence: 0.95,
+                        category: "communication"
+                    },
+                    {
+                        server: "simple-slack",
+                        name: "Simple Slack Bot",
+                        description: "Lightweight Slack bot implementation",
+                        install_command: "npm install -g simple-slack-mcp",
+                        confidence: 0.82,
+                        category: "communication"
+                    }
+                ],
+                query_time_ms: 48,
+                total_found: 8
+            },
+            'query PostgreSQL database': {
+                recommendations: [
+                    {
+                        server: "postgres-server",
+                        name: "PostgreSQL MCP Server",
+                        description: "Official PostgreSQL integration for MCP",
+                        install_command: "npx -y @modelcontextprotocol/server-postgres",
+                        confidence: 0.98,
+                        category: "database"
+                    },
+                    {
+                        server: "pg-server",
+                        name: "PostgreSQL Advanced",
+                        description: "Advanced PostgreSQL with query optimization",
+                        install_command: "npx -y @example/pg-mcp-server",
+                        confidence: 0.85,
+                        category: "database"
+                    }
+                ],
+                query_time_ms: 52,
+                total_found: 15
+            },
+            'scrape web pages': {
+                recommendations: [
+                    {
+                        server: "puppeteer-server",
+                        name: "Puppeteer MCP Server",
+                        description: "Web scraping and browser automation",
+                        install_command: "npx -y @modelcontextprotocol/server-puppeteer",
+                        confidence: 0.94,
+                        category: "automation"
+                    },
+                    {
+                        server: "fetch-server",
+                        name: "Fetch MCP Server",
+                        description: "Simple HTTP requests and web fetching",
+                        install_command: "npx -y @modelcontextprotocol/server-fetch",
+                        confidence: 0.88,
+                        category: "automation"
+                    }
+                ],
+                query_time_ms: 45,
+                total_found: 12
+            },
+            'search with Brave': {
+                recommendations: [
+                    {
+                        server: "brave-search",
+                        name: "Brave Search MCP Server",
+                        description: "Web search using Brave Search API",
+                        install_command: "npx -y @modelcontextprotocol/server-brave-search",
+                        confidence: 0.97,
+                        category: "search"
+                    }
+                ],
+                query_time_ms: 41,
+                total_found: 6
+            }
+        };
+
+        function setDemo(query) {
+            document.getElementById('demo-input').value = query;
+            runDemo();
+        }
+
+        function runDemo() {
+            const input = document.getElementById('demo-input').value.toLowerCase();
+            const output = document.getElementById('demo-output');
+            
+            // Show loading
+            output.textContent = '// Searching...';
+            
+            // Simulate API delay
+            setTimeout(() => {
+                // Find matching data or use default
+                let data = null;
+                for (const key in demoData) {
+                    if (input.includes(key.split(' ')[0]) || input.includes(key.split(' ')[1])) {
+                        data = demoData[key];
+                        break;
+                    }
+                }
+                
+                if (!data) {
+                    data = {
+                        recommendations: [
+                            {
+                                server: "example-server",
+                                name: "Example MCP Server",
+                                description: "An MCP server matching your query",
+                                install_command: "npx -y @example/server",
+                                confidence: 0.75,
+                                category: "general"
+                            }
+                        ],
+                        query_time_ms: 50,
+                        total_found: 3
+                    };
+                }
+                
+                output.textContent = JSON.stringify(data, null, 2);
+            }, 300);
+        }
+
+        // Code tabs
+        function showCode(lang) {
+            // Hide all
+            document.getElementById('code-python').classList.add('hidden');
+            document.getElementById('code-javascript').classList.add('hidden');
+            document.getElementById('code-curl').classList.add('hidden');
+            
+            // Reset tabs
+            document.getElementById('tab-python').classList.remove('bg-indigo-600', 'text-white');
+            document.getElementById('tab-python').classList.add('text-gray-400');
+            document.getElementById('tab-javascript').classList.remove('bg-indigo-600', 'text-white');
+            document.getElementById('tab-javascript').classList.add('text-gray-400');
+            document.getElementById('tab-curl').classList.remove('bg-indigo-600', 'text-white');
+            document.getElementById('tab-curl').classList.add('text-gray-400');
+            
+            // Show selected
+            document.getElementById('code-' + lang).classList.remove('hidden');
+            document.getElementById('tab-' + lang).classList.add('bg-indigo-600', 'text-white');
+            document.getElementById('tab-' + lang).classList.remove('text-gray-400');
+        }
+    </script>
+</body>
+</html>
